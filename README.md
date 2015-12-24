@@ -3,16 +3,27 @@
 12/24/15: the formatting of the input file is very particular right now (I'm working on fixing that, bare with me). Each type of data must be prefaced as follows:
 
 velocity - VELO
+
 acceleration - ACEL
+
 temperature - TEMP
+
 internal pressure - INTP
+
 tank pressure - TNKP
+
 roll - ROLL
+
 pitch - PITC
+
 yaw - YAW*
+
 x-position - XPOS
+
 y-position - YPOS
+
 z-position - ZPOS
+
 power consumption - PCON
 
 The file must end with EOF* (it really shouldn't matter, but just to be safe).
