@@ -1,0 +1,12 @@
+VELO324.4
+ACEL///-0.5
+POTE      55.62sdad
+INTP140.2
+TNKP——160.2
+ROLL: 7
+PITC: 9
+YAW*: 11
+XPOS: 11sadasdsa
+YPOS: 7
+ZPOS: 23
+PCON: 250!@#

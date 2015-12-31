@@ -9,4 +9,4 @@ YAW*: 5
 XPOS: 10sadasdsa
 YPOS: 11
 ZPOS: 21
-PCON: 150!@#
+PCON: 120!@#
