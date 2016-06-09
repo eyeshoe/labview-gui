@@ -1,4 +1,7 @@
 import processing.serial.*;
+import processing.net.*;
+
+Server myServer;
 
 int bgcolor;           // Background color
 int fgcolor;           // Fill color
@@ -26,6 +29,7 @@ void setup() {
   // Open whatever port is the one you're using.
   String portName = Serial.list()[3];
   myPort = new Serial(this, portName, 9600);
+  myServer = new Server(this, 5204);
 }
 
 void draw() {
@@ -33,6 +37,12 @@ void draw() {
   fill(fgcolor);
   // Draw the shape
   ellipse(xpos, ypos, 20, 20);
+  // Create int array for writing to server
+  int positions[] = {xpos, ypos};
+  // Send positions
+  for (int pos : positions) {
+    myServer.write(pos);
+  }
 }
 
 void serialEvent(Serial myPort) {
@@ -62,7 +72,7 @@ void serialEvent(Serial myPort) {
 
       // print the values (for debugging purposes only):
       println(xpos + "\t" + ypos + "\t" + fgcolor);
-
+      
       // Send a capital A to request new sensor readings:
       myPort.write('A');
       // Reset serialCount:

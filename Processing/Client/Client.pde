@@ -4,7 +4,7 @@
 import processing.net.*; 
 Client myClient; 
 int clicks;
-int dataIn;
+int xpos, ypos;
 
 void setup() { 
   // Connect to the local machine at port 10002.
@@ -29,7 +29,9 @@ void draw() {
   } else {
     background(0);
   }
-  dataIn = myClient.readChar();
-  println(dataIn);
-  background(dataIn);
+  xpos = myClient.readChar();
+  ypos = myClient.readChar();
+  String toPrint = "x: " + xpos + ", y: " + ypos;
+  println(toPrint);
+  background(toPrint);
 } 
